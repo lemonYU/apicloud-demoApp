@@ -5,67 +5,214 @@
     <meta charset="utf-8">
     <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
     <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
-    <title>Hello APP</title>
+    <title>妞妞 在线</title>
     <link rel="stylesheet" type="text/css" href="../css/api.css" />
-    <style>
-        label {
-            margin: 10px;
-            font-size: 24px;
-        }
-
-        ul {
-            margin-bottom: 10px;
-        }
-
-        ul li {
-            margin: 5px 10px;
-            padding: 5px;
-            color: #000;
-            word-wrap: break-word;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../css/film.css" />
 </head>
 
 <body>
-    <label>Hello APP</label>
-    <div id='sys-info'></div>
+    <header id="header">
+      <div class="search">
+         <img class="common_back" src="../image/common_back.png" />
+        <div class="main_search_div" onclick="searchPage()"><img class="main_search_img" src="../image/main_search.png" /> &emsp;搜索商品</div>
+      </div>
+    </header>
+    <div class="navigation">
+      <div class="menu menu_active"><span class="menu_text">综合1</span></div>
+      <div class="menu"><span class="menu_text">销量</span></div>
+      <div class="menu"><span class="menu_text">价格</span></div>
+      <div class="menu"><span class="menu_text">时间</span></div>
+    </div>
+    <div class="filmLists">
+      <div class="box" onclick="filmDetails(this)" data-id ="0">
+        <div class="pic">
+          <img class="pic_img" src="../image/main_frame_cat/film_0.png" />
+           <div class="img_text">
+            <p class="img_tittle">万达影城(环球港店)</p>
+            <div class="text_container">
+              <div class="text_container_left"><div class="text_text"><span class="text_left">￥</span><span class="text_center">46</span><span class="text_right">.99</span></div></div>
+              <div class="text_container_right"><div class="text_text_r">已售:99件</div></div>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box"  onclick="filmDetails(this)" data-id ="1">
+        <div class="pic">
+          <img class="pic_img" src="../image/main_frame_cat/film_3.png" />
+           <div class="img_text">
+            <p class="img_tittle">万达影城(环球港店)</p>
+            <div class="text_container">
+              <div class="text_container_left"><div class="text_text"><span class="text_left">￥</span><span class="text_center">46</span><span class="text_right">.99</span></div></div>
+              <div class="text_container_right"><div class="text_text_r">已售:99件</div></div>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box"  onclick="filmDetails(this)" data-id ="2">
+        <div class="pic">
+          <img class="pic_img" src="../image/main_frame_cat/film_1.png" />
+           <div class="img_text">
+            <p class="img_tittle">万达影城(环球港店)</p>
+            <div class="text_container">
+              <div class="text_container_left"><div class="text_text"><span class="text_left">￥</span><span class="text_center">46</span><span class="text_right">.99</span></div></div>
+              <div class="text_container_right"><div class="text_text_r">已售:99件</div></div>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="pic">
+          <img class="pic_img" src="../image/main_frame_cat/film_2.png" />
+           <div class="img_text">
+            <p class="img_tittle">万达影城(环球港店)</p>
+            <div class="text_container">
+              <div class="text_container_left"><div class="text_text"><span class="text_left">￥</span><span class="text_center">46</span><span class="text_right">.99</span></div></div>
+              <div class="text_container_right"><div class="text_text_r">已售:99件</div></div>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="pic">
+          <img class="pic_img" src="../image/main_frame_cat/film_3.png" />
+           <div class="img_text">
+            <p class="img_tittle">万达影城(环球港店)</p>
+            <div class="text_container">
+              <div class="text_container_left"><div class="text_text"><span class="text_left">￥</span><span class="text_center">46</span><span class="text_right">.99</span></div></div>
+              <div class="text_container_right"><div class="text_text_r">已售:99件</div></div>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
     apiready = function() {
-        var ver = api.version;
-        var sType = api.systemType;
-        var sVer = api.systemVersion;
-        var id = api.deviceId;
-        var model = api.deviceModel;
-        var name = api.deviceName;
-        var cType = api.connectionType;
-        var winName = api.winName;
-        var winWidth = api.winWidth;
-        var winHeight = api.winHeight;
-        var frameName = api.frameName || '';
-        var frameWidth = api.frameWidth || '';
-        var frameHeight = api.frameHeight || '';
-
-        var str = '<ul>';
-        str += '<li>引擎版本信息: ' + ver + '</li>';
-        str += '<li>系统类型: ' + sType + '</li>';
-        str += '<li>系统版本: ' + sVer + '</li>';
-        str += '<li>设备标识: ' + id + '</li>';
-        str += '<li>设备型号: ' + model + '</li>';
-        str += '<li>设备名称: ' + name + '</li>';
-        str += '<li>网络状态: ' + cType + '</li>';
-        str += '<li>主窗口名字: ' + winName + '</li>';
-        str += '<li>主窗口宽度: ' + winWidth + '</li>';
-        str += '<li>主窗口高度: ' + winHeight + '</li>';
-        str += '<li>子窗口名字: ' + frameName + '</li>';
-        str += '<li>子窗口宽度: ' + frameWidth + '</li>';
-        str += '<li>子窗口高度: ' + frameHeight + '</li>';
-        str += '</ul>';
-
-        $api.byId('sys-info').innerHTML = str;
-
-    };
+      var param = api.pageParam.name?api.pageParam.name:"";
+      // if(param){
+      //   funcGoto(api.pageParam.name)
+      // }
+      var header = $api.byId('header');
+      $api.fixStatusBar(header);
+      var headerH = $api.offset(header).h;
+      $api.addEvt($api.dom('.common_back'),'click',function(){
+         api.closeWin({
+             name: 'film_win'
+         });
+      })
+    }
+    function searchPage(){
+      var UISearchBar = api.require('UISearchBar');
+      UISearchBar.open({
+        placeholder: '请输入搜索关键字',
+        historyCount: 10,
+        showRecordBtn: true,
+        texts: {
+            cancelText: '取消',
+            clearText: '清除搜索记录'
+        },
+        styles: {
+            navBar: {
+                bgColor: '#FFFFFF',
+                borderColor: '#ccc'
+            },
+            searchBox: {
+                bgImg: '',
+                color: '#000',
+                height: 44
+            },
+            cancel: {
+                bg: 'rgba(0,0,0,0)',
+                color: '#D2691E',
+                size: 16
+            },
+            list: {
+                color: '#696969',
+                bgColor: '#FFFFFF',
+                borderColor: '#eee',
+                size: 16
+            },
+            clear: {
+                color: '#000000',
+                borderColor: '#ccc',
+                size: 16
+            }
+        }
+      }, function(ret, err) {
+        if (ret) {
+            console.lolg(JSON.stringify(ret));
+        } else {
+            console.log(JSON.stringify(err));
+        }
+      });
+    }
+    function fun(){
+      alert(233)
+    }
+    function funcGoto(goods_id){
+              api.openWin({
+                  name: 'filmDetails',
+                  url: 'filmDetails.html',
+                  pageParam: {
+                       name: goods_id
+                   }
+              });
+    }
+    function filmDetails(that){
+      console.log(that.getAttribute('data-id'));
+      if(that.getAttribute('data-id') == 0){
+            api.openFrame({
+                name: 'filmDetails',
+                url: 'filmDetails.html',
+                rect: {
+                    x: 0,
+                    y: 0,
+                    w: 'auto',
+                    h: 'auto'
+                }
+            });
+      }
+    }
+    function sibling(domName) {
+      var ul = document.querySelectorAll(domName);
+      ul.forEach(function(el, index) {
+          el.onclick = function(e) {
+              var sib = sibilings(this);
+              this.classList.add('menu_active');
+              sib.forEach(function(el, index) {
+                  el.classList.remove('menu_active');
+              })
+              return this;
+          }
+      })
+      function sibilings(el) {
+          var a = [];
+          var p = el.previousSibling;
+          while (p) {
+              if (p.nodeType === 1) {
+                  a.push(p);
+              }
+              p = p.previousSibling;
+          }
+          a.reverse();
+          var n = el.nextSibling;
+          while (n) {
+              if (n.nodeType === 1) {
+                  a.push(n);
+              }
+              n = n.nextSibling;
+          }
+          return a;
+      }
+  }
+    sibling('.navigation div')
 </script>
 
 </html>
